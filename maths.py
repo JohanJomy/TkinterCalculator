@@ -2,6 +2,17 @@ import tkinter
 import views
 import math
 
+def speechRecoginition():
+    pass
+
+def voiceOver():
+    if views.voiceOverText == " Voice Over OFF ":
+        views.voiceOverText = " Voice Over ON "
+        views.standerd()
+    elif views.voiceOverText == " Voice Over ON ":
+        views.voiceOverText = " Voice Over OFF "
+        views.standerd()
+
 def buttonClick(number):
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
@@ -43,8 +54,9 @@ def equal():
     result=eval(views.enter.get())
     views.enter.delete(0,views.tk.END)
     resultString = str(result)
-    resultLength = len(resultString)
-    
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(resultString)
+    resultLength = len(resultString)    
     if resultString[resultLength-2:] =='.0':
         result = str(resultString[:resultLength-2])
 

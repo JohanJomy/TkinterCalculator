@@ -1,5 +1,22 @@
 import tkinter as tk
 import maths
+import pyttsx3
+import time
+
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+
+rate = engine.getProperty('rate')                         
+engine.setProperty('rate', 165) 
+
+david = voices[0].id
+zira = voices[1].id
+
+engine.setProperty('voices', david)
+
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
 
 calculator = tk.Tk()
 calculator.title("Calculator")
@@ -11,6 +28,9 @@ enter2=tk.Entry(frame, width=22, borderwidth=0, font=('Comic San MS',25))
 enter=tk.Entry(frame, width=12, borderwidth=0, font=('Comic San MS',45))
 
 scientificFrame=tk.Frame(calculator)
+
+voiceOverText = " Voice Over OFF "
+speechRecoginitionText = " Speech Recoginition OFF "
 
 background = '#FFFFFF'
 text = '#000000'
@@ -63,13 +83,16 @@ class HoverButton(tk.Button):
         self.defaultBackground = self["background"]
         self.bind("<Enter>", self.on_enter)
         self.bind("<Leave>", self.on_leave)
+        #self.bind("<Enter>", self.speechEnter)
 
     def on_enter(self, e):
         self['background'] = self['activebackground']
+        if voiceOverText == " Voice Over ON ":
+            speak(self['text'])
 
     def on_leave(self, e):
         self['background'] = self['activeforeground']
-   
+ 
 def standerd():
 
     global background, text, highlight
@@ -215,11 +238,20 @@ def standerd():
     square.grid(row=5,column=2)
     square.configure(bg=background,fg=text, font=('Comic San MS',20),activebackground=highlight,activeforeground=background)
 
+    speechRecoginition=HoverButton(frame, text=speechRecoginitionText,padx=43,pady=15, borderwidth = 0,command=maths.speechRecoginition)
+    speechRecoginition.grid(row=6,column=0,columnspan=4)
+    speechRecoginition.configure(bg=background,fg=text, font=('Comic San MS',20),activebackground=highlight,activeforeground=background)
+
+    voiceOver=HoverButton(frame, text=voiceOverText,padx=62,pady=15, borderwidth = 0,command=maths.voiceOver)
+    voiceOver.grid(row=6,column=4,columnspan=4)
+    voiceOver.configure(bg=background,fg=text, font=('Comic San MS',20),activebackground=highlight,activeforeground=background)
+    
     calculator.mainloop()
 
 def historyPage():
     HistoryFrame = tk.Tk()
     HistoryFrame.title("History")
+    HistoryFrame.iconbitmap('./images/calculator2.ico')
     HistoryFrame.geometry("400x400")
     HistoryFrame.resizable(0, 0)
 
