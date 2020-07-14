@@ -93,6 +93,8 @@ def root():
     equation = f'√{current}'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {root}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(root)
 
 def sin():
     current=views.enter.get()
@@ -102,6 +104,8 @@ def sin():
     equation = f'sin({current})'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {sin}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(sin)
 
 def cos():
     current=views.enter.get()
@@ -111,6 +115,8 @@ def cos():
     equation = f'cos({current})'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {cos}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(cos)
 
 def tan():
     current=views.enter.get()
@@ -120,6 +126,8 @@ def tan():
     equation = f'tan({current})'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {tan}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(tan)
 
 def sinh():
     current=views.enter.get()
@@ -129,6 +137,8 @@ def sinh():
     equation = f'sinh({current})'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {sinh}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(sinh)
 
 def cosh():
     current=views.enter.get()
@@ -138,6 +148,8 @@ def cosh():
     equation = f'cosh({current})'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {cosh}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(cosh)
 
 def tanh():
     current=views.enter.get()
@@ -147,6 +159,8 @@ def tanh():
     equation = f'tanh({current})'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {tanh}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(tanh)
 
 def leftBracket():
     current=views.enter.get()
@@ -166,6 +180,8 @@ def log():
     equation = f'log({current})'
     views.enter2.insert(0,equation)
     views.history.append(f'{equation} = {log}')
+    if views.voiceOverText == " Voice Over ON ":
+        views.speak(log)
 
 def pi():
     current=views.enter.get()
