@@ -12,33 +12,46 @@ def voiceOver():
 
 def buttonClick(number):
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0, str(current) + str(number))
+    length = len(current)
+    if length < 23:
+        views.textSize = 17
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0, str(current) + str(number))
 
 def dot():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0, str(current) + '.')
+    length = len(current)
+    if length < 23:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0, str(current) + '.')
 
 def add():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0,str(current) + '+')
+    length = len(current)
+    if length < 23:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0,str(current) + '+')
 
 def subtract():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0,str(current) + '-')
+    length = len(current)
+    if length < 23:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0,str(current) + '-')
 
 def multiply():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0,str(current) + '*') 
+    length = len(current)
+    if length < 23:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0,str(current) + '*') 
 
 def divide():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0,str(current) + '/')
+    length = len(current)
+    if length < 23:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0,str(current) + '/')
 
 def clear():
     views.enter.delete(0,views.tk.END)
@@ -78,9 +91,11 @@ def percent():
 def plusMinus():
     current=views.enter.get()
     plus = current[0:1]
-        
-    if plus == '0' or plus == '1' or plus == '2' or plus == '3' or plus == '4' or plus == '5' or plus == '6' or plus == '7' or plus == '8' or plus == '9':  
-        views.enter.insert(0,'-')
+    length = len(current)
+
+    if plus == '0' or plus == '1' or plus == '2' or plus == '3' or plus == '4' or plus == '5' or plus == '6' or plus == '7' or plus == '8' or plus == '9':   
+        if length < 23:
+            views.enter.insert(0,'-')
     else:
         views.enter.delete(0,1)
 
@@ -170,13 +185,17 @@ def tanh():
 
 def leftBracket():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0, str(current) + '(' )
+    length = len(current)
+    if length < 23:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0, str(current) + '(' )
 
 def rightBracket():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0, str(current) + ')' )
+    length = len(current)
+    if length < 23:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0, str(current) + ')' )
 
 def log():
     current=views.enter.get()
@@ -197,5 +216,7 @@ def pi():
 
 def square():
     current=views.enter.get()
-    views.enter.delete(0,views.tk.END)
-    views.enter.insert(0, str(current) + '**' )
+    length = len(current)
+    if length < 22:
+        views.enter.delete(0,views.tk.END)
+        views.enter.insert(0, str(current) + '**' )
