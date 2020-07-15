@@ -9,8 +9,13 @@ This is a Scientific Calculator made with Python Tkinter with voice over feature
 
 ## Planed Updates
 
+* Voice Over
 * Use of keyboard instead of mouse.
 * Decrease the size of the text as the length increases
+
+## Completed Updates
+
+* Voice Over
 
 ## Installation
 
