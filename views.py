@@ -30,7 +30,6 @@ enter=tk.Entry(frame, width=12, borderwidth=0, font=('Comic San MS',45))
 scientificFrame=tk.Frame(calculator)
 
 voiceOverText = " Voice Over OFF "
-speechRecoginitionText = " Speech Recoginition OFF "
 
 background = '#FFFFFF'
 text = '#000000'
@@ -238,12 +237,8 @@ def standerd():
     square.grid(row=5,column=2)
     square.configure(bg=background,fg=text, font=('Comic San MS',20),activebackground=highlight,activeforeground=background)
 
-    speechRecoginition=HoverButton(frame, text=speechRecoginitionText,padx=43,pady=15, borderwidth = 0,command=maths.speechRecoginition)
-    speechRecoginition.grid(row=6,column=0,columnspan=4)
-    speechRecoginition.configure(bg=background,fg=text, font=('Comic San MS',20),activebackground=highlight,activeforeground=background)
-
-    voiceOver=HoverButton(frame, text=voiceOverText,padx=62,pady=15, borderwidth = 0,command=maths.voiceOver)
-    voiceOver.grid(row=6,column=4,columnspan=4)
+    voiceOver=HoverButton(frame, text=voiceOverText,padx=270,pady=15, borderwidth = 0,command=maths.voiceOver)
+    voiceOver.grid(row=6,column=0,columnspan=8)
     voiceOver.configure(bg=background,fg=text, font=('Comic San MS',20),activebackground=highlight,activeforeground=background)
     
     calculator.mainloop()

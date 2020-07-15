@@ -2,9 +2,6 @@ import tkinter
 import views
 import math
 
-def speechRecoginition():
-    pass
-
 def voiceOver():
     if views.voiceOverText == " Voice Over OFF ":
         views.voiceOverText = " Voice Over ON "
@@ -50,6 +47,7 @@ def clear():
 def equal():
 
     equation = views.enter.get()
+    views.enter2.delete(0,views.tk.END)
     views.enter2.insert(0,equation)
     result=eval(views.enter.get())
     views.enter.delete(0,views.tk.END)
@@ -72,6 +70,7 @@ def delete():
 def percent():
     firstNumber=float(views.enter.get())
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     views.enter.insert(0,firstNumber / 100 )
     views.enter2.insert(0,f'{firstNumber}/100' )
     views.history.append(f'{firstNumber}/100 = {firstNumber / 100}')
@@ -88,6 +87,7 @@ def plusMinus():
 def root():
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     root = math.sqrt(float(current))
     views.enter.insert(0,root)   
     equation = f'√{current}'
@@ -99,6 +99,7 @@ def root():
 def sin():
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     sin = math.sin(float(current))
     views.enter.insert(0,sin)   
     equation = f'sin({current})'
@@ -110,6 +111,7 @@ def sin():
 def cos():
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     cos = math.cos(float(current))
     views.enter.insert(0,cos)   
     equation = f'cos({current})'
@@ -121,6 +123,7 @@ def cos():
 def tan():
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     tan = math.tan(float(current))
     views.enter.insert(0,tan)   
     equation = f'tan({current})'
@@ -132,6 +135,7 @@ def tan():
 def sinh():
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     sinh = math.sinh(float(current))
     views.enter.insert(0,sinh)   
     equation = f'sinh({current})'
@@ -143,6 +147,7 @@ def sinh():
 def cosh():
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     cosh = math.cosh(float(current))
     views.enter.insert(0,cosh)   
     equation = f'cosh({current})'
@@ -154,6 +159,7 @@ def cosh():
 def tanh():
     current=views.enter.get()
     views.enter.delete(0,views.tk.END)
+    views.enter2.delete(0,views.tk.END)
     tanh = math.tanh(float(current))
     views.enter.insert(0,tanh)   
     equation = f'tanh({current})'
