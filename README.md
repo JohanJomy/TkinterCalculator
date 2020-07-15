@@ -10,6 +10,7 @@ This is a Scientific Calculator made with Python Tkinter with voice over feature
 ## Planed Updates
 
 * Use of keyboard instead of mouse.
+* Decrease the size of the text as the length increases
 
 ## Installation
 
