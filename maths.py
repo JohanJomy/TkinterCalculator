@@ -44,7 +44,7 @@ def clear():
     views.enter.delete(0,views.tk.END)
     views.enter2.delete(0,views.tk.END)
 
-def equal():
+def equal(*args):
 
     equation = views.enter.get()
     views.enter2.delete(0,views.tk.END)

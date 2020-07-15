@@ -107,6 +107,7 @@ def standerd():
     enter.configure(justify=tk.RIGHT,width=23)
     enter.configure(bg=background)
     enter.configure(fg=text)
+    enter.bind("<Return>",maths.equal)
     enter.grid(row=1, column=0, columnspan=8, padx=0, pady=0, ipady=15)
     
     one=HoverButton(frame,text=" 1 ",padx=15,pady=15, borderwidth = 0, command=lambda:maths.buttonClick(1))
